@@ -1,7 +1,36 @@
 
 # Phase 4 Project: Full-Stack Application
 
-This project is a fullstack application for Chelsea FC, showcasing their history and providing information about the club. It includes sections such as an introduction, team details, website building blocks, and a call to action.
+# Project by:
+
+Abigail Otieno, Dyphnah Nyamongo, Mary Mukami and Mola tonny
+
+This project is a fullstack application with a React frontend and a Flask backend for Chelsea FC, showcasing their history and providing information about the club. It includes sections such as an introduction, team details, website building blocks, and a call to action. The project satisfies 
+
+# Requirements
+For this project, we are required to:
+
+1.Use a Flask API backend with a React frontend.
+
+2.Have at least three models on the backend, that include the following:
+
+    - At least two one-to-many relationships.
+    - At least one reciprocal many-to-many relationship.
+    - Full CRUD actions for at least one resource.
+    - Minimum of create and read actions for EACH resource.
+
+3.Use forms and validation through Flask-WTF on all input.
+
+    -At least one data type validation.
+    -At least one string/number format validation.
+
+4.Have at least three different client-side routes using React Router. Be sure to include a nav bar or other UI element that allows users to navigate between routes.
+
+5.Connect the client and server using either fetch() or socket.io.
+
+
+Note: a user should only be able to edit and delete resources if they are logged in and the creator of that resource. For example, if we consider the example described below with models of User, DogHouse, and Review, I would only be able to edit or delete the reviews that I created.
+
 
 # Table of Contents
 1.Introduction
@@ -26,7 +55,7 @@ Navigation menu to access different team sections
 Call to action for users to sign up
 Usage
 
-To view the landing page, run npm start and python3 app.py
+To view in your browser, run npm start and python3 app.py
 
 # Technologies and Frameworks
 1. React.js
