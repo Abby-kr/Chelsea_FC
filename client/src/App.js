@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './navbar';
+import NewsletterSignup from './NewsletterForm'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path={"/Development_Team"} element={<Development_Team />} />
         </Routes>
       </Router>
+      <NewsletterSignup/>
     </div>
   );
 }
