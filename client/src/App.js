@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './navbar';
+import NewsletterSignup from './NewsletterForm'
 import FirstTeam from './FirstTeam';
 import WomensTeam from './WomensTeam';
 import DevelopmentTeam from './DevelopmentTeam';
@@ -16,6 +17,7 @@ function App() {
           <Route path={"/Womens_Team"} element={<WomensTeam />} />
         </Routes>
       </Router>
+      <NewsletterSignup/>
     </div>
   );
 }

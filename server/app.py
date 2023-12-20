@@ -1,4 +1,5 @@
-from flask import Flask,make_response,jsonify
+
+from flask import Flask,make_response,jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
@@ -10,6 +11,20 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///chelsea.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 migrate = Migrate(app, db)
 db.init_app(app)
+
+@app.route('/subscribers', methods=['GET'])
+def get_subscribers():
+    subscribers = Subscriber.query.all()
+    subscribers_data = [{'name': sub.name, 'email': sub.email} for sub in subscribers]
+    return jsonify(subscribers_data)
+
+@app.route('/subscribers', methods=['POST'])
+def add_subscriber():
+    data = request.get_json()
+    new_subscriber = Subscriber(name=data['name'], email=data['email'])
+    db.session.add(new_subscriber)
+    db.session.commit()
+    return jsonify(message='Subscriber added successfully'), 200
 
 @app.route('/First_Team', methods=['GET'])
 def get_players():
@@ -54,4 +69,5 @@ def get_women_players():
     return response
 
 if __name__ == '__main__':
-    app.run(port=5555,rdebug=True)
+    app.run(port=5555,debug=True)
+
